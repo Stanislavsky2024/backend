@@ -113,6 +113,8 @@ export class AuthService {
         password: await hash(password),
         username,
         role: 'CUSTOMER',
+        features: 0,
+        purchases: 0,
       },
     });
 
