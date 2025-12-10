@@ -18,6 +18,12 @@ export class ProductsController {
     return await this.productsService.getProducts();
   }
 
+  @Get('/search/:string')
+  @HttpCode(HttpStatus.OK)
+  async getProductsByString(@Param('str') str: string) {
+    return await this.productsService.getProductsBySubcategory(str);
+  }
+
   @Get('/subcategory/:name')
   @HttpCode(HttpStatus.OK)
   async getProductsBySubcategory(@Param('name') name: string) {

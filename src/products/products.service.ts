@@ -20,4 +20,13 @@ export class ProductsService {
       where: { id },
     });
   }
+
+  async getProductsByString(str: string) {
+    const products = await this.prismaService.product.findMany();
+    const searchResults = products.filter((product) =>
+      product.name.includes(str),
+    );
+
+    return searchResults;
+  }
 }
