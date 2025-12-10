@@ -115,6 +115,7 @@ export class AuthService {
         role: 'CUSTOMER',
         features: 0,
         purchases: 0,
+        balance: 0,
       },
     });
 
