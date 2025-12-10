@@ -12,19 +12,19 @@ import { ProductsService } from './products.service';
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
-  @Get('/products')
+  @Get('/')
   @HttpCode(HttpStatus.OK)
   async getProducts() {
     return await this.productsService.getProducts();
   }
 
-  @Get('/products/subcategory/:name')
+  @Get('/subcategory/:name')
   @HttpCode(HttpStatus.OK)
   async getProductsBySubcategory(@Param('name') name: string) {
     return await this.productsService.getProductsBySubcategory(name);
   }
 
-  @Get('/products/:id')
+  @Get('/:id')
   @HttpCode(HttpStatus.OK)
   async getProductById(@Param('id') id: string) {
     return await this.productsService.getProductById(id);

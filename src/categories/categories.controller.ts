@@ -5,7 +5,7 @@ import { CategoriesService } from './categories.service';
 export class CategoriesController {
   constructor(private readonly categoriesService: CategoriesService) {}
 
-  @Get('/categories')
+  @Get('/')
   @HttpCode(HttpStatus.OK)
   async getCategories() {
     return await this.categoriesService.getCategories();
