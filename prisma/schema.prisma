@@ -8,13 +8,15 @@ datasource db {
 }
 
 model User {
-  id       String    @id @default(uuid())
-  username String
-  email    String    @unique
-  password String
-  role     Role
-  reviews  Review[]
-  products Product[]
+  id        String    @id @default(uuid())
+  username  String
+  email     String    @unique
+  password  String
+  features  Int
+  purchases Int
+  role      Role
+  reviews   Review[]
+  products  Product[]
 
   @@map("users")
 }
