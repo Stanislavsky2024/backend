@@ -29,8 +29,9 @@ export class ProductsService {
 
   async getProductsByString(str: string) {
     const products = await this.prismaService.product.findMany();
-    const searchResults = products.filter((product) =>
-      product.name.includes(str),
+    const searchResults = products.filter(
+      (product) =>
+        product.name.toLowerCase().includes(str.toLowerCase().trim()) === true,
     );
 
     return searchResults;
